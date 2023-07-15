@@ -14,7 +14,7 @@ class CreateContactsTable extends Migration
     public function up()
     {
         Schema::create('contacts', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->foreignId('account_id')->index()->constrained();
             $table->foreignId('organization_id')->nullable()->index()->constrained();
             $table->string('first_name', 25);
